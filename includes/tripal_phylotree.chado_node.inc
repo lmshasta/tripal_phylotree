@@ -83,6 +83,12 @@ function tripal_phylotree_node_view($node, $view_mode, $langcode) {
       '#tripal_toc_title' => 'Analysis',
       '#weight' => -70,
     ); 
+    $node->content['tripal_genomic_context_viewer'] = array(
+      '#markup' => theme('tripal_genomic_context_viewer', array('node' => $node)),
+      '#tripal_toc_id'    => 'genomic_context',
+      '#tripal_toc_title' => 'Genomic Context',
+      '#weight' => -60,
+    );
     break;
     
   case 'teaser':

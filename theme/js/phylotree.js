@@ -57,22 +57,24 @@
       if(d.children) {
         // interior node
         if(d.phylonode_id) {
-          var link = $('#phylonode_context_link');
+          var link = $('#genomic-context-viewer-iframe');
 	  //eventually, this link will be replaced with something internal to the site
-          link.attr('href', 'http://test.comparative-legumes.org:8001/chado/context_viewer/' + d.phylonode_id);
+          link.attr('src', 'http://comparative-legumes.org/chado/context_viewer/iframe/' + d.phylonode_id);
+          link = $('#genomic_context_viewer_link');
           link.text('View Genomic Contexts for genes in this subtree');
+          link.attr('href', '?pane=genomic_context');
           link.show();
         }
         else {
           // this shouldn't happen but ok
-          $('#phylonode_context_link').hide();
+          $('#genomic_context_viewer_link').hide();
         }
         
         // show dialog content relevant for interior node
 	// go_link not ready for prime time
         // $('#phylonode_go_link').show();
         $('#phylonode_go_link').hide();
-        $('#phylonode_context_link').show();
+        $('#genomic_context_viewer_link').show();
         
         // hide dialog content which is only applicable to leaf nodes
         $('#phylonode_organism_link').hide();
@@ -87,7 +89,7 @@
         
         // hide dialog content which is only applicable to interior nodes
         $('#phylonode_go_link').hide();
-        $('#phylonode_context_link').hide();
+        $('#genomic_context_viewer_link').hide();
         
         if(d.feature_node_id) {
           var link = $('#phylonode_feature_link');
@@ -154,6 +156,7 @@
           $('#phylonode_organism_link').hide();
         }
       }
+
     
       dialog.dialog( {
         title : title,

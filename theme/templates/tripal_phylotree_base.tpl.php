@@ -54,8 +54,10 @@ if( ! empty($phylotree->comment) ) {
   <div><a id="phylonode_go_link" href="?block=phylotree_go" class="tripal_toc_list_item_link"  tabindex="-1">
     View Gene Ontology</a></div>
   <!-- removed tripal_toc_list_item_link from context link, at least while it is a link off the site -->
-  <div><a id="phylonode_context_link" href="?block=phylotree_context" class="" tabindex="-1">
-    View Context</a></div>
+  <!-- <div><a id="phylonode_context_link" href="?block=phylotree_context" class="" tabindex="-1">-->
+  <!-- <div><a id="genomic_context_viewer_link" href="?pane=genomic_context" class="tripal_toc_list_item_link" tabindex="-1">-->
+  <div><a id="genomic_context_viewer_link" href="" class="tripal_toc_list_item_link" tabindex="-1">
+    View Genomic Context</a></div>
 </div>
 
 <?php
